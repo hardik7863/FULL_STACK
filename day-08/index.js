@@ -193,7 +193,30 @@ console.log(num1===num2);
 
 //Logical operators
 
+//AND (&&) OR(||)
+// // if number is positive or negative and other than 0 is considered true
+// let isLoggedIn=true;
+// let isAdmin=true;
+// console.log("Is the user logged in and an admin?", isLoggedIn && isAdmin);
 
+
+let isLoggedIn=10;
+let isAdmin=20;
+console.log("Is the user logged in and an admin?", isLoggedIn && isAdmin);
+
+//output is 20 because and operator return the last value whereas or operation returns the first value
+console.log(10&&20);//20
+console.log(10||20);//10
+
+console.log(true||false);//true
+//shortcircuit evaluation concept is applied
+//i.e if or operator finds first value as true it will not check the next value
+//whereas and operator checks till last value hence returns the last value
+console.log(Boolean(-10)); 
+
+
+
+ 
 
 
 

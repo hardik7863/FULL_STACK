@@ -218,7 +218,7 @@ align-content: space-between;
  
 }
 #s7{
-    
+    height: 600px ;
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
     grid-template-rows: 0;
@@ -227,7 +227,92 @@ align-content: space-between;
     width: 362px;
     height: 500px;
 }
-#s8{
-    height: 700px;
-    background-color: yellow;
-}
+
+ 
+.eighth {
+    display: flex;
+    height: 90vh;
+    }
+    
+    .eighth > .info {
+    box-sizing: border-box;
+    color: white;
+    width: 50vw;
+    height: inherit;
+    background-color: #7da2a9;
+    padding-left: 5em;
+    padding-top: 8em;
+    }
+    
+    .eighth > .info > h4 {
+    font-size: 25px;
+    }
+    
+    .eighth > .info > p {
+    margin-top: 20px;
+    margin-right: 50px;
+    line-height: 25px;
+    }
+    
+    .eighth > .info > .address {
+    margin-top: 20px;
+    line-height: 25px;
+    }
+    
+    .eighth > .info > .icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    }
+    
+    .eighth > .info > .icons > svg {
+    cursor: pointer;
+    }
+    
+    .eighth > .form {
+    width: 50vw;
+    height: inherit;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    
+    
+    }
+    
+    .eighth > .form > form {
+    width: 80%;
+    margin: auto;
+    }
+    
+    .eighth > .form > form > input, textarea {
+    width: 95%;
+    border: 1px solid white;
+    background-color: black;
+    padding: 15px;
+    margin: 5px;
+    font-size: 15px;
+    }
+    
+    .eighth > .form > form > button {
+    border: 1px solid black;
+    background-color: whitesmoke;
+    padding: 10px 25px;
+    margin: 10px;
+    font-size: 15px;
+    }
+    
+    /* nineth */
+    
+    .nineth {
+    height: 60px;
+    background-color: #333333;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .nineth > p {
+    color: white;
+    font-size: 12px;
+    margin: auto;
+    }
