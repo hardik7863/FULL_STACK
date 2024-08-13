@@ -1,0 +1,235 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Header */
+.header {
+    background-color: #f2f2f2;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#icons {
+    padding-top: 19px;
+}
+
+#logo {
+    padding-top: 10px;
+}
+
+#close {
+    height: 3vh;
+    padding-top: 2vh;
+}
+
+/* Main section */
+#main {
+    background-image: url(./1.jpeg);
+    background-size: cover;
+    height: 82vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#art, #school {
+    color: white;
+}
+
+#art {
+    font-size: 10vw;
+    margin-bottom: 1rem;
+}
+
+#school {
+    font-weight: 900;
+    font-size: 20vw;
+}
+
+/* Section 2 */
+#s2 {
+    background-color: #7da2a9;
+    color: white;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#s2-span-1, #s2-span-2 {
+    font-size: 2.5vh;
+    margin: 10px;
+}
+
+#BGB {
+    color: black;
+}
+
+/* Section 3 */
+#s3 {
+    background-color: #f2f2f2;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#s3-h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+#s3-p {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    padding: 20px;
+    background-color: white;
+}
+
+/* Section 4 */
+#s4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 50px 20px;
+}
+
+#s4-1-image {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#s4-2 {
+    color: white;
+    text-align: center;
+}
+
+#s4-h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#s4-p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin: auto;
+}
+
+#s4-button {
+    background-color: #7DA2A9;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: #f2f2f2;
+}
+
+/* Section 5 */
+#s5 {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#s5-h2 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#s5-p {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+#s5-image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    justify-content: center;
+}
+
+.images {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+    #main {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    #s2 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #s2-span-1, #s2-span-2 {
+        font-size: 2vh;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #art {
+        font-size: 8vw;
+    }
+
+    #school {
+        font-size: 16vw;
+    }
+
+    #s2 {
+        padding: 20px 10px;
+    }
+
+    #s3-p {
+        padding: 0 20px;
+    }
+
+    #s5-image {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #logo, #icons, #close {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    #main {
+        height: auto;
+    }
+
+    #s3-h2 {
+        font-size: 1.8rem;
+    }
+
+    #container {
+        grid-template-columns: 1fr;
+    }
+}
