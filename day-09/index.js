@@ -163,8 +163,105 @@
 
 // if there is only one statement retuning the value then you can write in below format
 
-let add =(a,b) =>a+b;
-let result=add(4,3);
-console.log(result);
+// let add =(a,b) =>a+b;
+// let result=add(4,3);
+// console.log(result);
+
+//2nd Difference Btw  var let and const
+//two types of scope 
+//global scope /local scope or functional scope before Es6 version of js
+//After Es6 -block scope is added
+//inside the parenthess of function is local or functional scope 
+//rest of parenthesis used like in if and else are block scope 
+
+// var -global scope variable
+//let and const -block scope variable
+
+// {
+//     let a=10;
+// }
+// console.log(a); //cannot be accessable
+
+
+// {
+//     var b=20;
+
+// }
+// console.log(b); //can be accessible globally
+
+
+// {
+//     let c=28;
+// }
+// {
+//     let c="Hardik";
+//     console.log(c);
+    
+// }
+// here both the let are pointing to diferent variables  
+
+// {
+//     var d=34;
+// }
+// {
+//     var d=90;
+// }
+//here both the var are pointing towards same varible
+
+// function sum(){
+//     var a=20;
+//     return a;
+// }
+// console.log(a);
+//error 
+//var is accessible global except functional scope incase if there was if else then it can be accessible
+
+//Array and Objects
+
+// let arr=[10,20,30,40,50];
+// console.log(arr[3]);
+// // console.log(arr[-2]);
+// // js do not support negative indexing
+// console.log(arr[arr.length-1]); //for last element
+
+// let nexarr=[10,20,30,[1,2,3,4],[20,30,40,["aaa","bbb",[true,false]]]];
+// console.log(nexarr[nexarr.length-1]);
+// // console.log(arr[4,3,2,0]);
+// // comma cannot be used in js unlike python  js will consider the shorthand approuch ie. last value will be considered
+// let newArr1=nexarr[nexarr.length-1];
+// let newArr2=newArr1[newArr1.length-1];
+// let newArr3=newArr2[newArr2.length-1];
+// console.log(newArr3[0]);
+
+let arr=[10,20,30,40,50];
+console.log(arr.length);
+
+arr[arr.length]="Shubham";
+console.log(arr.length);
+console.log(arr[arr.length-1]);
+
+
+//Objects
+let obj={
+ "firstName":"Hardik",
+ lastname:"Batwal" //you can make key as string as well as variable
+}
+console.log(obj.firstName);
+
+//changing values
+obj.lastname="mittal";
+console.log(obj);
+
+// creating new key
+obj.section="FSD";
+console.log(obj);
+
+// we can use square bracket as alternative of dot but dot is much better as it provides better functionality
+
+let firstName= "Section";
+let keyname="Address";
+obj["Address"]="Jaipur";
+console.log(obj);
+// square bracket format need string as key either directly or through stored in variable but cannot use other format such as number
 
 
