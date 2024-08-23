@@ -14,11 +14,14 @@ html,body{
     font-size: 30px;
 }
 h1{
-    font-size: 50px;
+    font-size: 2rem; 
+    /* font-size: 2em;  */
+    /* 1em= 30px */
+    /* em is used for give size according to the parent */
 }
 h2{
-    font-size: 40px;
-}
+    font-size: 1em;
+} 
 h3{
-    font-size: 50px;
+    font-size: 1.5em;
 }
