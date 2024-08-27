@@ -213,19 +213,114 @@
 //     console.log(error);
     
 // })
-document.getElementById("product-button").addEventListener("click",function(){
-    fetch("https://fakestoreapi.com/products")
-    .then((res)=>res.json())
-    .then((data)=>{
-        data.forEach((item) => {
-            console.log(item.image);
-            let newDiv = document.createElement("div");
-            newDiv.innerHTML = `<img style='width : 100px' src=${item.image} alt='Product-Image' ><h3>${item.title}</h3><p>${item.price}</p>`;
-            let myDiv = document.getElementById("products");
-            myDiv.appendChild(newDiv);
-        });
-    })
-    .catch((error)=>{
-        console.log(error);
-    })
-});
+// document.getElementById("product-button").addEventListener("click",function(){
+//     fetch("https://fakestoreapi.com/products")
+//     .then((res)=>res.json())
+//     .then((data)=>{
+//         data.forEach((item) => {
+//             console.log(item.image);
+//             let newDiv = document.createElement("div");
+//             newDiv.innerHTML = `<img style='width : 100px' src=${item.image} alt='Product-Image' ><h3>${item.title}</h3><p>${item.price}</p>`;
+//             let myDiv = document.getElementById("products");
+//             myDiv.appendChild(newDiv);
+//         });
+//     })
+//     .catch((error)=>{
+//         console.log(error);
+//     })
+// });
+
+//Async Await
+
+// async function fetchData(){
+//     let response= await fetch("https://fakestoreapi.com/products")
+//     console.log(response);
+    
+// }
+
+//Async Await
+
+// async function fetchUserData(){
+//     try{
+//         let response=  await fetchData();
+//         console.log(response);
+//     }
+   
+    
+//     catch(error){
+//     console.log(error);
+    
+//     }
+// }
+// fetchUserData();
+
+//This 
+
+// let user={
+//     username:"hardik",
+//     age :"40",
+//     getUserDetails:function(){
+//         console.log(this); //it will print user object
+        
+        // console.log(`Hello,My username is ${this.username} and my age is ${this.age}`);
+
+        
+//     }
+// }
+// console.log(this); //it will print the empty object
+
+// user.getUserDetails();
+
+// Constructors --functions he hote hai 
+//technically class do not exit in js because behind the scene constructor use hota hai
+//class ka synatx hota hai but it is the syntatic sugar
+
+// In js function ka pehla letter capital ho toh voh constructor hai 
+//when you create constructor make sure to keep first letter capital
+
+//creating constructor
+// function Person(name,age){
+//     const personObj={
+//         username:name,
+//         age:age,
+//         greet :function(){
+//             console.log(`Hello, my Name is ${this.username}and my age is ${this.age}`);
+            
+//         }
+//     }
+//     return personObj;
+// }
+
+// const person1=Person("hardik","20");
+// const person2=Person("vinay","50");
+// person1.greet();
+// person2.greet();
+
+//above method is not right way of creating constructor although it will work
+
+function Person(name,age){
+    this.name =name;
+    this.age=age;
+    // this.greet =function(){
+    //     console.log(`Hello, my Name is ${this.name}and my age is ${this.age}`);
+        
+    // }
+    // return this ; // nhi return karunge toh bhi yeh return ker dega
+}
+//Behind th scene
+Person.prototype.greet= function(){
+        console.log(`Hello, my Name is ${this.name}and my age is ${this.age}`);
+        
+    }
+    // pehle greet function Person me dekha rha tha per abh voh prototype me dekh rha hai 
+    //in console
+    //agar me 50 bar object banaunga toh 50 bar function memory kha yega 
+    //but usko me prototyppe me dal do toh ek bar he memory khayega
+const person1=new Person("Hardik","21");
+const person2=new Person("Batwal","22");
+console.log(person1);
+console.log(person2);
+
+// let arr=[10,20,30,40]
+// console.log(arr);
+
