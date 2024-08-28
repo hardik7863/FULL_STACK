@@ -27,3 +27,43 @@
 
 // 4. Create a list of items. Write a function to remove an item from the list when a specific button next
 // to it is clicked.
+// let li1=document.getElementById('ul').addEventListener("click",function(){
+//     let data=document.getElementById("ul");
+//     data.removeChild(data.children[0])
+
+// })
+
+
+
+
+
+
+
+// //5. Create a simple HTML form with input fields for a user's name and email. Write JavaScript to
+// display a message below the form that says 'Thank you for submitting, [name]!' when the form is
+// submitted.
+// let button1=document.getElementById("form").addEventListener("click",function(){
+//     let data=document.getElementById("form")
+//     alert(`Thank you for submiting,${data.id="username"}`)
+// })
+
+
+// 6. Write a program that adds an event listener to a button so that when it is clicked, an alert
+// message is shown.
+// let btn=document.getElementById('button').addEventListener("click",function(){
+//     let data=document.getElementById('button')
+//     alert("button is clicked")
+// })
+
+// 7. Create an HTML element with a class of 'hidden'. Write a JavaScript function that toggles this
+// class when a button is clicked, showing and hiding the element.
+//  let doc=document.getElementById("button").addEventListener("click",function(){
+//     let data=document.getElementsByClassName("hidden")
+//     data.style.display="content"
+//     console.log("done");
+    
+    
+//  })
+// 8. Write a program that retrieves the value of an input field and displays it in another part of the
+// document when a button is pressed.
+
