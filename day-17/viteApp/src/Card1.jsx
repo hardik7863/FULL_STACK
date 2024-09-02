@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Card1 = () => {
+const Card1 = (props) => {
+    console.log(props);
   return (
-    <div className='p-2 m-2 text-center bg-slate-400 shadow-xl rounded-lg'>
-        <h1>Card 1 Heading</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, architecto!</p>
+    <div className={`p-10 m-2 text-cente ${props.classname} shadow-xl rounded-lg`}>
+        <h1 className='text-2xl'>{props.heading}</h1>
+        <p>{props.description}</p>
     </div>
   )
 }
