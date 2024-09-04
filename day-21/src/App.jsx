@@ -7,11 +7,15 @@ import ProductImage4 from "./assets/4.jpeg"
 import Child from "./Child"
 import Login from "./Login"
 import { CountContext } from "./context/CountProvider"
-import Reducer from "./Reducer"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, RouterProvider, Routes } from "react-router-dom"
 import Signup from "./Signup"
 import Home from "./Home"
 import Navbar from "./Navbar"
+import Router from "./router/Router"
+import Reducer from "./Reducer"
+import Callback from "./Callback"
+import Memo from "./Memo"
+import Ref from "./Ref"
 
 const data = [
   {
@@ -104,13 +108,17 @@ function App() {
 
 return (
     <div className="w-full">
-      <Navbar />
-       <Reducer />
-      <Routes>
+      {/* <Navbar /> */}
+      {/* <Reducer /> */}
+      {/* <Callback /> */}
+      {/* <Memo /> */}
+      <Ref />
+      {/* <RouterProvider router={Router} /> */}
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-      </Routes>
+      </Routes> */}
       {/* <p className="text-3xl text-white">App</p>
       <button className="p-2 border-2 text-gray-200 active:bg-gray-200 active:text-gray-700" onClick={()=>{setCountValue((prev)=>prev+1)}}>Update Count Value</button> */}
       {/* <Child count={count} setCount={setCount} /> */}
