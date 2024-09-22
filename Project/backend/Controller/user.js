@@ -1,50 +1,58 @@
-const User=require("../model/user");
+const User = require("../model/user");
+const bcrypt = require("bcrypt");
 
-exports.signup=async (req,res)=>{
-    try{
-      const {name,email,password,phoneNumber} =req.body;
-      const existingUser =await User.findOne({email:email});
-      if(existingUser){
-        return res.status(400).send({message :"User Already exist"});
-      }
-      const newuser =new User({
-        name:name,
-        email:email,
-        password:password,
-        phoneNumber:phoneNumber
-      });
+exports.signup = async (req,res , next)=>{
+    try {
+        const { name , email , password , phoneNumber } = req.body;
+        const existingUser = await User.findOne({email : email});
 
-      await newuser.save();
-      res.status(201).send({message:"User created"});
+        if(existingUser){
+            const error = new Error("User Already exist");
+            error.name = "UserExist";
+            error.statusCode = 400;
+            throw next(error);
+        };
+
+        // const hashedPassword = await bcrypt.hash(password , 12);
+
+        const newUser = new User({
+            name : name , 
+            email : email,
+            password : password,
+            phoneNumber : phoneNumber
+        });
+
+        await newUser.save();
+        res.status(201).send({message : "User created"});
+        
+    } catch (err) {
+        next(err);
     }
-    catch(err){
-        if (err.name === "ValidatorError"){
-         const errors =Object.values(err.errors).mao(error=> error.message);
-         return res.status(400).json({
-            message: "Validation error",
-            error :errors
-
-})        }
-       res.status(500).send(err);   
-}
 };
 
-
-
-exports.login=async(req,res)=>{
-    try{
-        const {email,password}=req.body;
-        const isExistingUser=await User.findOne({email:email});
-        if(!isExistingUser){
-            return res.status(404).send({message:"user not found"});
+exports.login = async (req,res , next)=>{
+    try {
+        const { email , password } = req.body;
+        const isExitingUser = await User.findOne({email : email});
+        if(!isExitingUser){
+            const error = new Error("User not found");
+            error.name = "NotFound";
+            error.statusCode = 404;
+            throw next(error);
         };
-        const isMatched=password===isExistingUser.password;
-        if(!isMatched){
-            return res.status(401).send({message:" invalid password"})
+
+        const isMatched = await bcrypt.compare(password , isExitingUser.password);
+        if(!isMatched) { 
+            const error = new Error("Unauthorized");
+            error.name = "UnAuthorized";
+            error.statusCode = 401;
+            throw next(error);
         }
-        res.status(200).send({message:"user looged in",data:isExistingUser});
-    }
-    catch(error){
-        res.status(500).send(error);
+
+        res.status(200).send({message : "User Logged-In" , data : isExitingUser});
+    } catch (error) {
+        next(error);
     }
 }
+
+
